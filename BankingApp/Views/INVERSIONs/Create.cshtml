@@ -1,0 +1,201 @@
+﻿@model BankingApp.Models.INVERSION
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>INVERSION</h4>
+            <hr />
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_CLIENTE, "ID_CLIENTE", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ID_CLIENTE", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_CLIENTE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_MONEDA, "ID_MONEDA", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ID_MONEDA", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_MONEDA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MONTO_INVERSION, htmlAttributes: new { @class = "control-label col-md-2", @id = "montoInversionText" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MONTO_INVERSION, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MONTO_INVERSION, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PLAZO_DIAS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PLAZO_DIAS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PLAZO_DIAS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TASA_INTERES, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TASA_INTERES, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TASA_INTERES, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MODALIDAD_PAGO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @{
+                        // Define la lista de opciones
+                        List<SelectListItem> modalidades = new List<SelectListItem>
+                                    {
+                                new SelectListItem { Text = "Pago mensual", Value = "M" },
+                                new SelectListItem { Text = "Hasta vencimiento", Value = "F" }
+                            };
+                    }
+
+                    @Html.DropDownListFor(
+                        model => model.MODALIDAD_PAGO,
+                        modalidades,
+                        "Seleccione modalidad...", // Texto de la opción por defecto (opcional)
+                        new { @class = "form-control" }
+                    )
+
+                    @Html.ValidationMessageFor(model => model.MODALIDAD_PAGO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FECHA_VENCIMIENTO, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FECHA_VENCIMIENTO, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.FECHA_VENCIMIENTO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MONTO_INTERESES, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MONTO_INTERESES, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly"} })
+                    @Html.ValidationMessageFor(model => model.MONTO_INTERESES, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID_USUARIO_CREA, "ID_USUARIO_CREA", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ID_USUARIO_CREA", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_USUARIO_CREA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    @section scripts {
+        <script>
+            // 1. Asignación de Elementos (usando los IDs correctos generados por Razor)
+            const plazoDiasInput = document.getElementById("PLAZO_DIAS");
+            const tasaInput = document.getElementById("TASA_INTERES");
+            const montoInversionInput = document.getElementById("MONTO_INVERSION");
+            const fechaVencimientoInput = document.getElementById("FECHA_VENCIMIENTO");
+            const montoInteresesInput = document.getElementById("MONTO_INTERESES"); // Asumiendo que es MONTO_INTERESES
+
+            // Obtiene la fecha de inicio (asumiendo que se establece en el controlador o es la fecha actual)
+            // Usaremos la fecha de hoy si el campo no tiene valor al cargar la página
+            const FECHA_INICIO = new Date();
+
+            // Función para calcular la fecha de vencimiento
+            function calcularFechaVencimiento() {
+                // Lee el valor de días del plazo
+                const dias = parseInt(plazoDiasInput.value);
+
+                if (isNaN(dias) || dias <= 0) {
+                    fechaVencimientoInput.value = ''; // Limpiar si el valor es inválido
+                    return;
+                }
+
+                // Crear una nueva fecha a partir de la fecha de inicio
+                const fechaVencimiento = new Date(FECHA_INICIO);
+
+                // Sumar los días al plazo. (1 día = 24 * 60 * 60 * 1000 milisegundos)
+                fechaVencimiento.setDate(fechaVencimiento.getDate() + dias);
+
+                // Formatear la fecha a YYYY-MM-DD (necesario para campos de input tipo date)
+                const year = fechaVencimiento.getFullYear();
+                const month = String(fechaVencimiento.getMonth() + 1).padStart(2, '0');
+                const day = String(fechaVencimiento.getDate()).padStart(2, '0');
+
+                fechaVencimientoInput.value = `${year}-${month}-${day}`;
+            }
+
+            // Función para calcular el Monto Total de Intereses
+            function calcularMontoIntereses() {
+                // Leer y validar los valores
+                const monto = parseFloat(montoInversionInput.value) || 0;
+                const tasaAnual = parseFloat(tasaInput.value) || 0;
+                const plazoDias = parseInt(plazoDiasInput.value) || 0;
+
+                if (monto <= 0 || tasaAnual <= 0 || plazoDias <= 0) {
+                    montoInteresesInput.value = 0.00;
+                    return;
+                }
+
+                // ⚠️ FÓRMULA DE CÁLCULO DE INTERÉS SIMPLE (Base 360 días, según el estándar bancario)
+                // Interés Total = Monto * (Tasa Anual / 100) * (Días Plazo / 360)
+
+                const tasaDecimal = tasaAnual / 100;
+                const interesTotal = monto * tasaDecimal * (plazoDias / 360);
+
+                // Formatear el resultado a dos decimales
+                montoInteresesInput.value = interesTotal.toFixed(2);
+            }
+
+            // 2. Asignación de Event Listeners (cuando los inputs cambian)
+
+            // Eventos para el cálculo de Intereses
+            plazoDiasInput.addEventListener('input', calcularMontoIntereses);
+            tasaInput.addEventListener('input', calcularMontoIntereses);
+            montoInversionInput.addEventListener('input', calcularMontoIntereses);
+
+            // Evento para el cálculo de la Fecha de Vencimiento
+            plazoDiasInput.addEventListener('input', calcularFechaVencimiento);
+
+            // Ejecutar al cargar la página si ya hay valores
+            calcularFechaVencimiento();
+            calcularMontoIntereses();
+
+        </script>
+    }
+</body>
+</html>

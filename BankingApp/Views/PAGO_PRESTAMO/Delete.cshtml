@@ -1,0 +1,88 @@
+﻿@model BankingApp.Models.PAGO_PRESTAMO
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>PAGO_PRESTAMO</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NUMERO_PAGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NUMERO_PAGO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_PAGO_PROGRAMADA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_PAGO_PROGRAMADA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MONTO_INTERES)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MONTO_INTERES)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_PAGO_REAL)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_PAGO_REAL)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ESTADO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_CREACION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PRESTAMO.MODALIDAD_PAGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PRESTAMO.MODALIDAD_PAGO)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Save" class="btn btn-danger" />
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

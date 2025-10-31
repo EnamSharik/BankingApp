@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BankingApp.Models.USUARIO>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.USUARIO1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CONTRASENA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_ULTIMO_ACCESO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td class="text-nowrap">
+                @Html.DisplayFor(modelItem => item.USUARIO1)
+            </td>
+            <td class="text-nowrap">
+                @Html.DisplayFor(modelItem => item.CONTRASENA)
+            </td>
+            <td class="text-nowrap">
+                @Html.DisplayFor(modelItem => item.FECHA_CREACION)
+            </td>
+            <td class="text-nowrap">
+                @Html.DisplayFor(modelItem => item.FECHA_ULTIMO_ACCESO)
+            </td>
+            <td class="text-nowrap">
+                @Html.DisplayFor(modelItem => item.ESTADO)
+            </td>
+            <td class="text-nowrap">
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_USUARIO }, new { @class = "btn btn-primary" }) 
+                @Html.ActionLink("Details", "Details", new { id=item.ID_USUARIO }, new { @class = "btn btn-secondary" }) 
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_USUARIO }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

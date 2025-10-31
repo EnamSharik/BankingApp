@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "D:\\VS Source\\BankingApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\VS Source\\BankingApp\\packages\\Oracle.ManagedDataAccess.EntityFramework.19.18.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:packages\\Oracle.ManagedDataAccess.EntityFramework.19.18.0\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E144C3CA-FF13-4CBC-96D2-0834032B2520}|BankingApp\\BankingApp.csproj|D:\\VS Source\\BankingApp\\bankingapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E144C3CA-FF13-4CBC-96D2-0834032B2520}|BankingApp\\BankingApp.csproj|d:\\vs source\\bankingapp\\bankingapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E144C3CA-FF13-4CBC-96D2-0834032B2520}|BankingApp\\BankingApp.csproj|solutionrelative:bankingapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,27 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "readme.txt",
-              "DocumentMoniker": "D:\\VS Source\\BankingApp\\packages\\Oracle.ManagedDataAccess.EntityFramework.19.18.0\\readme.txt",
-              "RelativeDocumentMoniker": "packages\\Oracle.ManagedDataAccess.EntityFramework.19.18.0\\readme.txt",
-              "ToolTip": "D:\\VS Source\\BankingApp\\packages\\Oracle.ManagedDataAccess.EntityFramework.19.18.0\\readme.txt",
-              "RelativeToolTip": "packages\\Oracle.ManagedDataAccess.EntityFramework.19.18.0\\readme.txt",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-10-11T17:45:41.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\VS Source\\BankingApp\\BankingApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "BankingApp\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\VS Source\\BankingApp\\BankingApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "BankingApp\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T17:13:23.011Z"
+              "WhenOpened": "2025-10-12T14:28:41.288Z",
+              "EditorCaption": ""
             }
           ]
         }

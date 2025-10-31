@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="APELLIDO" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="NIT" Type="varchar2" MaxLength="20" />
+    <Property Name="DPI" Type="varchar2" MaxLength="20" />
+    <Property Name="TELEFONO" Type="varchar2" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
+    <Property Name="DIRECCION" Type="varchar2" MaxLength="255" />
+    <Property Name="FECHA_REGISTRO" Type="date" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ENTIDAD_FINANCIERA">
+    <Key>
+      <PropertyRef Name="ID_ENTIDAD" />
+    </Key>
+    <Property Name="ID_ENTIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar2" MaxLength="20" />
+    <Property Name="DIRECCION" Type="varchar2" MaxLength="255" />
+    <Property Name="TELEFONO" Type="varchar2" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
+    <Property Name="FECHA_REGISTRO" Type="date" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="FONDO_INVERSION">
+    <Key>
+      <PropertyRef Name="ID_FONDO" />
+    </Key>
+    <Property Name="ID_FONDO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_MONEDA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="CAPITAL_INVERSIONISTAS" Type="number" Precision="15" Scale="2" />
+    <Property Name="CAPITAL_PRESTADO" Type="number" Precision="15" Scale="2" />
+    <Property Name="CAPITAL_DISPONIBLE" Type="number" Precision="15" Scale="2" />
+    <Property Name="FECHA_CREACION" Type="date" />
+  </EntityType>
+  <EntityType Name="INVERSION">
+    <Key>
+      <PropertyRef Name="ID_INVERSION" />
+    </Key>
+    <Property Name="ID_INVERSION" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_MONEDA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MONTO_INVERSION" Type="number" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="PLAZO_DIAS" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TASA_INTERES" Type="number" Precision="5" Scale="4" Nullable="false" />
+    <Property Name="MODALIDAD_PAGO" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="FECHA_INVERSION" Type="date" Nullable="false" />
+    <Property Name="FECHA_VENCIMIENTO" Type="date" Nullable="false" />
+    <Property Name="MONTO_INTERESES" Type="number" Precision="15" Scale="2" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+    <Property Name="FECHA_CREACION" Type="date" />
+    <Property Name="ID_USUARIO_CREA" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MONEDA">
+    <Key>
+      <PropertyRef Name="ID_MONEDA" />
+    </Key>
+    <Property Name="ID_MONEDA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="SIMBOLO" Type="varchar2" MaxLength="5" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+    <Property Name="FECHA_CREACION" Type="date" />
+  </EntityType>
+  <EntityType Name="PAGO_INVERSION">
+    <Key>
+      <PropertyRef Name="ID_PAGO_INVERSION" />
+    </Key>
+    <Property Name="ID_PAGO_INVERSION" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_INVERSION" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NUMERO_PAGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_PAGO_PROGRAMADA" Type="date" Nullable="false" />
+    <Property Name="MONTO_INTERES" Type="number" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="FECHA_PAGO_REAL" Type="date" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+    <Property Name="FECHA_CREACION" Type="date" />
+  </EntityType>
+  <EntityType Name="PAGO_PRESTAMO">
+    <Key>
+      <PropertyRef Name="ID_PAGO_PRESTAMO" />
+    </Key>
+    <Property Name="ID_PAGO_PRESTAMO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_PRESTAMO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NUMERO_PAGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_PAGO_PROGRAMADA" Type="date" Nullable="false" />
+    <Property Name="MONTO_INTERES" Type="number" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="FECHA_PAGO_REAL" Type="date" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+    <Property Name="FECHA_CREACION" Type="date" />
+  </EntityType>
+  <EntityType Name="PRESTAMO">
+    <Key>
+      <PropertyRef Name="ID_PRESTAMO" />
+    </Key>
+    <Property Name="ID_PRESTAMO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ENTIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_MONEDA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="MONTO_PRESTAMO" Type="number" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="PLAZO_DIAS" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TASA_INTERES" Type="number" Precision="5" Scale="4" Nullable="false" />
+    <Property Name="MODALIDAD_PAGO" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="FECHA_PRESTAMO" Type="date" Nullable="false" />
+    <Property Name="FECHA_VENCIMIENTO" Type="date" Nullable="false" />
+    <Property Name="MONTO_INTERESES" Type="number" Precision="15" Scale="2" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+    <Property Name="FECHA_CREACION" Type="date" />
+    <Property Name="ID_USUARIO_CREA" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CONTRASENA" Type="varchar2" MaxLength="255" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="date" />
+    <Property Name="FECHA_ULTIMO_ACCESO" Type="date" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK_FONDO_MONEDA">
+    <End Role="MONEDA" Type="Self.MONEDA" Multiplicity="1" />
+    <End Role="FONDO_INVERSION" Type="Self.FONDO_INVERSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONEDA">
+        <PropertyRef Name="ID_MONEDA" />
+      </Principal>
+      <Dependent Role="FONDO_INVERSION">
+        <PropertyRef Name="ID_MONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="INVERSION" Type="Self.INVERSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="INVERSION">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_MONEDA">
+    <End Role="MONEDA" Type="Self.MONEDA" Multiplicity="1" />
+    <End Role="INVERSION" Type="Self.INVERSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONEDA">
+        <PropertyRef Name="ID_MONEDA" />
+      </Principal>
+      <Dependent Role="INVERSION">
+        <PropertyRef Name="ID_MONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INV_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="INVERSION" Type="Self.INVERSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="INVERSION">
+        <PropertyRef Name="ID_USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAGO_INV">
+    <End Role="INVERSION" Type="Self.INVERSION" Multiplicity="1" />
+    <End Role="PAGO_INVERSION" Type="Self.PAGO_INVERSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVERSION">
+        <PropertyRef Name="ID_INVERSION" />
+      </Principal>
+      <Dependent Role="PAGO_INVERSION">
+        <PropertyRef Name="ID_INVERSION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PAGO_PREST">
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="1" />
+    <End Role="PAGO_PRESTAMO" Type="Self.PAGO_PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRESTAMO">
+        <PropertyRef Name="ID_PRESTAMO" />
+      </Principal>
+      <Dependent Role="PAGO_PRESTAMO">
+        <PropertyRef Name="ID_PRESTAMO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PREST_ENTIDAD">
+    <End Role="ENTIDAD_FINANCIERA" Type="Self.ENTIDAD_FINANCIERA" Multiplicity="1" />
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENTIDAD_FINANCIERA">
+        <PropertyRef Name="ID_ENTIDAD" />
+      </Principal>
+      <Dependent Role="PRESTAMO">
+        <PropertyRef Name="ID_ENTIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PREST_MONEDA">
+    <End Role="MONEDA" Type="Self.MONEDA" Multiplicity="1" />
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONEDA">
+        <PropertyRef Name="ID_MONEDA" />
+      </Principal>
+      <Dependent Role="PRESTAMO">
+        <PropertyRef Name="ID_MONEDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PREST_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="PRESTAMO" Type="Self.PRESTAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="PRESTAMO">
+        <PropertyRef Name="ID_USUARIO_CREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="ENTIDAD_FINANCIERA" EntityType="Self.ENTIDAD_FINANCIERA" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="FONDO_INVERSION" EntityType="Self.FONDO_INVERSION" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="INVERSION" EntityType="Self.INVERSION" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="MONEDA" EntityType="Self.MONEDA" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="PAGO_INVERSION" EntityType="Self.PAGO_INVERSION" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="PAGO_PRESTAMO" EntityType="Self.PAGO_PRESTAMO" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="PRESTAMO" EntityType="Self.PRESTAMO" Schema="BANK" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="BANK" store:Type="Tables" />
+    <AssociationSet Name="FK_FONDO_MONEDA" Association="Self.FK_FONDO_MONEDA">
+      <End Role="MONEDA" EntitySet="MONEDA" />
+      <End Role="FONDO_INVERSION" EntitySet="FONDO_INVERSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_CLIENTE" Association="Self.FK_INV_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="INVERSION" EntitySet="INVERSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_MONEDA" Association="Self.FK_INV_MONEDA">
+      <End Role="MONEDA" EntitySet="MONEDA" />
+      <End Role="INVERSION" EntitySet="INVERSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INV_USUARIO" Association="Self.FK_INV_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="INVERSION" EntitySet="INVERSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAGO_INV" Association="Self.FK_PAGO_INV">
+      <End Role="INVERSION" EntitySet="INVERSION" />
+      <End Role="PAGO_INVERSION" EntitySet="PAGO_INVERSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PAGO_PREST" Association="Self.FK_PAGO_PREST">
+      <End Role="PRESTAMO" EntitySet="PRESTAMO" />
+      <End Role="PAGO_PRESTAMO" EntitySet="PAGO_PRESTAMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PREST_ENTIDAD" Association="Self.FK_PREST_ENTIDAD">
+      <End Role="ENTIDAD_FINANCIERA" EntitySet="ENTIDAD_FINANCIERA" />
+      <End Role="PRESTAMO" EntitySet="PRESTAMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PREST_MONEDA" Association="Self.FK_PREST_MONEDA">
+      <End Role="MONEDA" EntitySet="MONEDA" />
+      <End Role="PRESTAMO" EntitySet="PRESTAMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PREST_USUARIO" Association="Self.FK_PREST_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="PRESTAMO" EntitySet="PRESTAMO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

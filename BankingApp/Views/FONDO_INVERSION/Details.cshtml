@@ -1,0 +1,74 @@
+﻿@model BankingApp.Models.FONDO_INVERSION
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>FONDO_INVERSION</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CAPITAL_INVERSIONISTAS)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CAPITAL_INVERSIONISTAS)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CAPITAL_PRESTADO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CAPITAL_PRESTADO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CAPITAL_DISPONIBLE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CAPITAL_DISPONIBLE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_CREACION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MONEDA.CODIGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MONEDA.CODIGO)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_FONDO }, new { @class = "btn btn-primary" }) 
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
