@@ -39,26 +39,19 @@ namespace BankingApp.Controllers
         // GET: PAGO_INVERSION/Create
         public ActionResult Create()
         {
-            // 1. OBTENER LAS INVERSIONES Y SUS CLIENTES RELACIONADOS EN UNA SOLA CONSULTA SQL.
-            // Usamos .Include() para garantizar que el objeto CLIENTE sea cargado.
-            // Esto es crucial para evitar el problema N+1.
             var inversionesConClientes = db.INVERSION
-                .Include(i => i.CLIENTE) // Carga el objeto CLIENTE junto con la INVERSION
-                .ToList(); // Ejecutar la consulta y traer los datos a memoria (C#)
+                .Include(i => i.CLIENTE) 
+                .ToList(); 
 
-            // 2. HACER LA PROYECCIÓN Y LA CONCATENACIÓN EN MEMORIA (C#)
-            // Ya que estamos en C#, no hay restricciones de traducción a SQL (ni ORA-00932).
             var listaInversionesConNombre = inversionesConClientes
                 .Select(i => new
                 {
                     ID_VALOR = i.ID_INVERSION,
 
-            // La concatenación es segura en C# (incluso si NOMBRE es un tipo CLOB/NCLOB)
             TEXTO_DESPLEGADO = i.ID_INVERSION.ToString() + " - " + i.CLIENTE.NOMBRE
                 })
                 .ToList();
 
-            // 3. Cargar el ViewBag con la lista final
             ViewBag.ID_INVERSION = new SelectList(
                 listaInversionesConNombre,
                 "ID_VALOR",

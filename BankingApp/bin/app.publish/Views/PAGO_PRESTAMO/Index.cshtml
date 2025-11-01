@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BankingApp.Models.PAGO_PRESTAMO>
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <div class="overflow-auto">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NUMERO_PAGO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FECHA_PAGO_PROGRAMADA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MONTO_INTERES)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FECHA_PAGO_REAL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ESTADO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FECHA_CREACION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRESTAMO.MODALIDAD_PAGO)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.NUMERO_PAGO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.FECHA_PAGO_PROGRAMADA)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.MONTO_INTERES)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.FECHA_PAGO_REAL)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.ESTADO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.FECHA_CREACION)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.PRESTAMO.MODALIDAD_PAGO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_PAGO_PRESTAMO }, new { @class = "btn btn-secondary" }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_PAGO_PRESTAMO }, new { @class = "btn btn-primary" }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_PAGO_PRESTAMO }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

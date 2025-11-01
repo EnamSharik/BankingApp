@@ -1,0 +1,82 @@
+﻿@model BankingApp.Models.PAGO_INVERSION
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>PAGO_INVERSION</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NUMERO_PAGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NUMERO_PAGO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_PAGO_PROGRAMADA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_PAGO_PROGRAMADA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MONTO_INTERES)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MONTO_INTERES)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_PAGO_REAL)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_PAGO_REAL)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ESTADO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_CREACION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.INVERSION.MODALIDAD_PAGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.INVERSION.MODALIDAD_PAGO)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PAGO_INVERSION }, new { @class = "btn btn-primary" }) 
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

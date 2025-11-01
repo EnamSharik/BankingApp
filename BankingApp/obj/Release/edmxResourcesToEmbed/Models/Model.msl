@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="Model.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="DPI" ColumnName="DPI" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="FECHA_REGISTRO" ColumnName="FECHA_REGISTRO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTIDAD_FINANCIERA">
+      <EntityTypeMapping TypeName="Model.ENTIDAD_FINANCIERA">
+        <MappingFragment StoreEntitySet="ENTIDAD_FINANCIERA">
+          <ScalarProperty Name="ID_ENTIDAD" ColumnName="ID_ENTIDAD" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="FECHA_REGISTRO" ColumnName="FECHA_REGISTRO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FONDO_INVERSION">
+      <EntityTypeMapping TypeName="Model.FONDO_INVERSION">
+        <MappingFragment StoreEntitySet="FONDO_INVERSION">
+          <ScalarProperty Name="ID_FONDO" ColumnName="ID_FONDO" />
+          <ScalarProperty Name="ID_MONEDA" ColumnName="ID_MONEDA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="CAPITAL_INVERSIONISTAS" ColumnName="CAPITAL_INVERSIONISTAS" />
+          <ScalarProperty Name="CAPITAL_PRESTADO" ColumnName="CAPITAL_PRESTADO" />
+          <ScalarProperty Name="CAPITAL_DISPONIBLE" ColumnName="CAPITAL_DISPONIBLE" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVERSION">
+      <EntityTypeMapping TypeName="Model.INVERSION">
+        <MappingFragment StoreEntitySet="INVERSION">
+          <ScalarProperty Name="ID_INVERSION" ColumnName="ID_INVERSION" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_MONEDA" ColumnName="ID_MONEDA" />
+          <ScalarProperty Name="MONTO_INVERSION" ColumnName="MONTO_INVERSION" />
+          <ScalarProperty Name="PLAZO_DIAS" ColumnName="PLAZO_DIAS" />
+          <ScalarProperty Name="TASA_INTERES" ColumnName="TASA_INTERES" />
+          <ScalarProperty Name="MODALIDAD_PAGO" ColumnName="MODALIDAD_PAGO" />
+          <ScalarProperty Name="FECHA_INVERSION" ColumnName="FECHA_INVERSION" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
+          <ScalarProperty Name="MONTO_INTERESES" ColumnName="MONTO_INTERESES" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="ID_USUARIO_CREA" ColumnName="ID_USUARIO_CREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONEDA">
+      <EntityTypeMapping TypeName="Model.MONEDA">
+        <MappingFragment StoreEntitySet="MONEDA">
+          <ScalarProperty Name="ID_MONEDA" ColumnName="ID_MONEDA" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="SIMBOLO" ColumnName="SIMBOLO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGO_INVERSION">
+      <EntityTypeMapping TypeName="Model.PAGO_INVERSION">
+        <MappingFragment StoreEntitySet="PAGO_INVERSION">
+          <ScalarProperty Name="ID_PAGO_INVERSION" ColumnName="ID_PAGO_INVERSION" />
+          <ScalarProperty Name="ID_INVERSION" ColumnName="ID_INVERSION" />
+          <ScalarProperty Name="NUMERO_PAGO" ColumnName="NUMERO_PAGO" />
+          <ScalarProperty Name="FECHA_PAGO_PROGRAMADA" ColumnName="FECHA_PAGO_PROGRAMADA" />
+          <ScalarProperty Name="MONTO_INTERES" ColumnName="MONTO_INTERES" />
+          <ScalarProperty Name="FECHA_PAGO_REAL" ColumnName="FECHA_PAGO_REAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGO_PRESTAMO">
+      <EntityTypeMapping TypeName="Model.PAGO_PRESTAMO">
+        <MappingFragment StoreEntitySet="PAGO_PRESTAMO">
+          <ScalarProperty Name="ID_PAGO_PRESTAMO" ColumnName="ID_PAGO_PRESTAMO" />
+          <ScalarProperty Name="ID_PRESTAMO" ColumnName="ID_PRESTAMO" />
+          <ScalarProperty Name="NUMERO_PAGO" ColumnName="NUMERO_PAGO" />
+          <ScalarProperty Name="FECHA_PAGO_PROGRAMADA" ColumnName="FECHA_PAGO_PROGRAMADA" />
+          <ScalarProperty Name="MONTO_INTERES" ColumnName="MONTO_INTERES" />
+          <ScalarProperty Name="FECHA_PAGO_REAL" ColumnName="FECHA_PAGO_REAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRESTAMO">
+      <EntityTypeMapping TypeName="Model.PRESTAMO">
+        <MappingFragment StoreEntitySet="PRESTAMO">
+          <ScalarProperty Name="ID_PRESTAMO" ColumnName="ID_PRESTAMO" />
+          <ScalarProperty Name="ID_ENTIDAD" ColumnName="ID_ENTIDAD" />
+          <ScalarProperty Name="ID_MONEDA" ColumnName="ID_MONEDA" />
+          <ScalarProperty Name="MONTO_PRESTAMO" ColumnName="MONTO_PRESTAMO" />
+          <ScalarProperty Name="PLAZO_DIAS" ColumnName="PLAZO_DIAS" />
+          <ScalarProperty Name="TASA_INTERES" ColumnName="TASA_INTERES" />
+          <ScalarProperty Name="MODALIDAD_PAGO" ColumnName="MODALIDAD_PAGO" />
+          <ScalarProperty Name="FECHA_PRESTAMO" ColumnName="FECHA_PRESTAMO" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
+          <ScalarProperty Name="MONTO_INTERESES" ColumnName="MONTO_INTERESES" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="ID_USUARIO_CREA" ColumnName="ID_USUARIO_CREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="Model.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="USUARIO1" ColumnName="USUARIO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="FECHA_ULTIMO_ACCESO" ColumnName="FECHA_ULTIMO_ACCESO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

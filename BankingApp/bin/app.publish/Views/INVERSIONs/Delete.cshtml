@@ -1,0 +1,128 @@
+﻿@model BankingApp.Models.INVERSION
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>INVERSION</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MONTO_INVERSION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MONTO_INVERSION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PLAZO_DIAS)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PLAZO_DIAS)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TASA_INTERES)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TASA_INTERES)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MODALIDAD_PAGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MODALIDAD_PAGO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_INVERSION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_INVERSION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_VENCIMIENTO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_VENCIMIENTO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MONTO_INTERESES)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MONTO_INTERESES)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ESTADO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_CREACION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CLIENTE.NOMBRE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CLIENTE.NOMBRE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MONEDA.CODIGO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MONEDA.CODIGO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.USUARIO.USUARIO1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.USUARIO.USUARIO1)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Save" class="btn btn-danger" />|
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

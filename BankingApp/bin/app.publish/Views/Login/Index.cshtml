@@ -1,0 +1,61 @@
+﻿@model BankingApp.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Iniciar Sesión";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    ViewBag.HideNavBar = true;
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Acceso al Sistema</h2>
+
+                    @* El formulario se envía a la acción 'logOn' del controlador 'Login'.
+                        El verbo HTTP será POST, según la definición de tu controlador.
+                    *@
+                    @using (Html.BeginForm("logOn", "Login", FormMethod.Post, new { @class = "form-signin" }))
+                    {
+                        @* **Etiqueta y campo para el Usuario** *@
+                        <div class="form-group mb-3">
+                            @Html.LabelFor(m => m.user, "Nombre de Usuario", new { @class = "form-label" })
+                            @Html.TextBoxFor(m => m.user, new { @class = "form-control", @placeholder = "Ingresa tu usuario", @required = "required" })
+                            @* Opcional: Mostrar mensajes de validación *@
+                            @Html.ValidationMessageFor(m => m.user, "", new { @class = "text-danger" })
+                        </div>
+
+                        @* **Etiqueta y campo para la Contraseña** *@
+                        <div class="form-group mb-4">
+                            @Html.LabelFor(m => m.password, "Contraseña", new { @class = "form-label" })
+                            @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Ingresa tu contraseña", @required = "required" })
+                            @* Opcional: Mostrar mensajes de validación *@
+                            @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                        </div>
+
+                        @* **Botón de Enviar** *@
+                        <div class="d-grid">
+                            <div class="row">
+                                <div class="col-8">
+                                    <button class="btn btn-primary w-100 g-1 p-1 border-1" type="submit">
+                                        <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+                                    </button>
+                                </div>
+                                <div class="col-4">
+                                    @Html.ActionLink("Regístrate ahora", "GoToRegister", "Login", null, new { @class = "btn w-100 btn-success g-1 p-1 border-1" })
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @* **Manejo de Mensajes de Error** *@
+                    @if (ViewBag.Message != null)
+                    {
+                        <p class="text-danger mt-3 text-center">@ViewBag.Message</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a4077ea7209b46c2b61858ce27615068" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ENTIDAD_FINANCIERA" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FONDO_INVERSION" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.INVERSION" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MONEDA" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAGO_INVERSION" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAGO_PRESTAMO" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRESTAMO" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_INV_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PREST_ENTIDAD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FONDO_MONEDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_INV_MONEDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_INV_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PAGO_INV" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PREST_MONEDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PAGO_PREST" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PREST_USUARIO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

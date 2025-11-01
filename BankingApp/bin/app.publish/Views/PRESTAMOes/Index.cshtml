@@ -1,0 +1,110 @@
+﻿@model IEnumerable<BankingApp.Models.PRESTAMO>
+
+@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <div class="overflow-auto">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MONTO_PRESTAMO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLAZO_DIAS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASA_INTERES)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MODALIDAD_PAGO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FECHA_PRESTAMO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FECHA_VENCIMIENTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MONTO_INTERESES)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ESTADO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FECHA_CREACION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ENTIDAD_FINANCIERA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MONEDA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.USUARIO)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.MONTO_PRESTAMO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.PLAZO_DIAS)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.TASA_INTERES)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.MODALIDAD_PAGO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.FECHA_PRESTAMO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.FECHA_VENCIMIENTO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.MONTO_INTERESES)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.ESTADO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.FECHA_CREACION)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.ENTIDAD_FINANCIERA.NOMBRE)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.MONEDA.CODIGO)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.DisplayFor(modelItem => item.USUARIO.USUARIO1)
+                    </td>
+                    <td class="text-nowrap">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_PRESTAMO }, new { @class = "btn btn-secondary" }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_PRESTAMO }, new { @class = "btn btn-primary" }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_PRESTAMO }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
